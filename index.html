@@ -71,6 +71,13 @@
 <li>  Blog: <a href="http://blog.pitr.ch" target="_parent" title="http://blog.pitr.ch">http://blog.pitr.ch</a></li>
 </ul>
 
+<h2>Difference between <code>prise</code> and <code>pry-rescue</code></h2>
+
+<p>Praise allows a developer to investigate all exceptions including the ones rescued later.
+<code>pry-rescue</code> on the other hand will work only for exceptions which are un-handled by the process.
+Typical use-case is e.g. a worker, which is rescuing all exceptions. <code>pry-rescue</code> cannot help with
+investigation of these exceptions.</p>
+
 <h2>Install</h2>
 
 <ol>
@@ -144,7 +151,7 @@ It can be updated at runtime <span class='object_link'><a href="PraiseImpl.html#
 </div></div>
 
     <div id="footer">
-  Generated on Tue May 14 13:48:53 2013 by
+  Generated on Tue May 14 21:06:06 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>
