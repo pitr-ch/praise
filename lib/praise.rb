@@ -20,7 +20,7 @@ class PraiseImpl
     install
   end
 
-  # @return [Array<Hash{:class, :message, :line => Regexp, String}] rules for exception ignoring
+  # @return [Array<Hash{:class, :message, :line => Regexp, String}>] rules for exception ignoring
   def ignored
     @ignored ||= YAML.load File.read(@ignored_path)
   end
