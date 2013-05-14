@@ -6,6 +6,13 @@ Pry + raise = praise. A small gem for intercepting raise calls to dig up hidden 
 -   Source: {https://github.com/pitr-ch/praise}
 -   Blog: {http://blog.pitr.ch}
 
+## Difference between `prise` and `pry-rescue`
+
+Praise allows a developer to investigate all exceptions including the ones rescued later.
+`pry-rescue` on the other hand will work only for exceptions which are un-handled by the process.
+Typical use-case is e.g. a worker, which is rescuing all exceptions. `pry-rescue` cannot help with
+investigation of these exceptions.
+
 ## Install
 
 1.  require the gem early, e.g. in `contig/application.rb` in rails

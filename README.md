@@ -1,4 +1,4 @@
-# Praise
+## Praise
 
 Pry + raise = praise. A small gem for intercepting raise calls to dig up hidden and buried exceptions.
 
