@@ -1,14 +1,14 @@
 Gem::Specification.new do |s|
 
   s.name             = 'praise'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.date             = '2013-05-14'
   s.summary          = 'Intercepts raise calls'
   s.description      = 'A small gem for intercepting raise calls to dig up hidden and buried exceptions.'
   s.authors          = ['Petr Chalupa']
   s.email            = 'git@pitr.ch'
   s.homepage         = 'https://github.com/pitr-ch/praise'
-  s.extra_rdoc_files = %w(MIT-LICENSE)
+  s.extra_rdoc_files = %w(MIT-LICENSE README.md README_FULL.md)
   s.files            = Dir['lib/praise.rb']
   s.require_paths    = %w(lib)
   s.license          = 'MIT'
