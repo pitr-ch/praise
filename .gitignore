@@ -1,0 +1,6 @@
+.bin
+.bundle
+.idea
+.yardoc
+yardoc
+*.gem

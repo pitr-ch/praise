@@ -1,0 +1,36 @@
+PATH
+  remote: .
+  specs:
+    praise (0.0.1)
+      pry
+      pry-stack_explorer
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    binding_of_caller (0.7.1)
+      debug_inspector (>= 0.0.1)
+    coderay (1.0.9)
+    debug_inspector (0.0.2)
+    kramdown (1.0.2)
+    method_source (0.8.1)
+    minitest (5.0.0)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-stack_explorer (0.4.9)
+      binding_of_caller (>= 0.7)
+      pry (~> 0.9.11)
+    slop (3.4.4)
+    yard (0.8.6.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  kramdown
+  minitest
+  praise!
+  pry
+  yard
