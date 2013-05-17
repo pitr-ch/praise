@@ -5,7 +5,7 @@
 --output-dir=./yardoc/
 --markup markdown
 --title=Praise
---template-path ./yard-template
+--template-path ./../yard-template
 --template default
 
 ./lib/**/*.rb
