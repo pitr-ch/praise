@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    praise (0.0.2)
+    praise (0.0.3)
       pry
       pry-stack_explorer
 

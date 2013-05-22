@@ -20,6 +20,7 @@ investigation of these exceptions.
 
         Praise = PraiseImpl.
             new(File.join(root, Katello.early_config.praise.ignored_path),
+                true,
                 -> level, message { Logging.logger['praise'].add Logging.level_num(level), message })
 
 And that's it.

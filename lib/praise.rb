@@ -3,21 +3,26 @@ require 'pry-stack_explorer'
 require 'yaml'
 
 class PraiseImpl
+  attr_reader :enabled
+
   # @param [Proc] outputter a proc which ouputs/logs messages
+  # @param [true, false] enabled
   # @param [String] ignored_path path to a yaml file with rules for ignored exceptions
   # @example initialization
   #     Praise = PraiseImpl.
   #         new(File.join(root, Katello.early_config.praise.ignored_path),
   #             -> level, message { Logging.logger['praise'].add Logging.level_num(level), message })
-  def initialize(ignored_path, outputter = -> level, message { $stderr.puts message })
+  def initialize(ignored_path, enabled = true, outputter = -> level, message { $stderr.puts message })
     @outputter = outputter
     unless File.exist? ignored_path
       log :info, "creating #{ignored_path} file"
       File.open(ignored_path, 'w') { |f| f.write [].to_yaml }
     end
     @ignored_path = ignored_path
+    @enabled      = false
     reload
-    install
+
+    self.enabled = enabled
   end
 
   # @return [Array<Hash{:class, :message, :line => Regexp, String}>] rules for exception ignoring
@@ -31,6 +36,17 @@ class PraiseImpl
     ignored = File.open(@ignored_path, 'r') { |f| YAML.load(f.read) }
     File.open(@ignored_path, 'w') { |f| f.write(ignored.push(rule).to_yaml) }
     reload
+  end
+
+  # use to enable or disable Praise
+  def enabled=(value)
+    return if @enabled == value
+
+    if value
+      install
+    else
+      uninstall
+    end
   end
 
   # @return [true, false] should the exception ignored?
@@ -99,5 +115,11 @@ class PraiseImpl
       #alias_method :fail, :raise
     end
     self
+  end
+
+  def uninstall
+    Kernel.module_eval do
+      define_method :raise, Kernel.instance_method(:_original_raise)
+    end
   end
 end
