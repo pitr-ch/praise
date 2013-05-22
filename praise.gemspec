@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name             = 'praise'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.date             = '2013-05-14'
   s.summary          = 'Intercepts raise calls'
   s.description      = 'A small gem for intercepting raise calls to dig up hidden and buried exceptions.'
