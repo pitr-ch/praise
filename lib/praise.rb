@@ -3,6 +3,10 @@ require 'pry-stack_explorer'
 require 'yaml'
 
 class PraiseImpl
+  def self.version
+    @version ||= Gem::Version.new File.read(File.join(File.dirname(__FILE__), '..', 'VERSION'))
+  end
+
   attr_reader :enabled
 
   # @param [Proc] outputter a proc which ouputs/logs messages

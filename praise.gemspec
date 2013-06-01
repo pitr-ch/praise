@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name             = 'praise'
-  s.version          = '0.0.3'
+  s.version          = File.read(File.join(File.dirname(__FILE__), 'VERSION'))
   s.date             = '2013-05-14'
   s.summary          = 'Intercepts raise calls'
   s.description      = 'A small gem for intercepting raise calls to dig up hidden and buried exceptions.'
