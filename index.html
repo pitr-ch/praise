@@ -63,7 +63,11 @@
 
     <div id="content"><div id='filecontents'><h1>Praise</h1>
 
-<p>Pry + raise = praise. A small gem for intercepting raise calls to dig up hidden and buried exceptions.</p>
+<p><code>pry + raise = praise</code></p>
+
+<p>A small gem intercepting all <code>#raise</code> calls spawning <code>pry</code> sessions to investigate. There is
+runtime-editable config file to set ignore patterns for unwanted <code>raise calls</code>. The gem is targeting
+investigation of re-risen and masked-by-another exceptions.</p>
 
 <ul>
 <li>  Documentation: <a href="http://blog.pitr.ch/praise">http://blog.pitr.ch/praise</a></li>
@@ -152,7 +156,7 @@ It can be updated at runtime <span class='object_link'><a href="PraiseImpl.html#
 </div></div>
 
     <div id="footer">
-  Generated on Wed May 22 10:39:10 2013 by <a href='http://blog.pitr.ch'>pitr.ch</a> with
+  Generated on Sat Jun  1 16:50:10 2013 by <a href='http://blog.pitr.ch'>pitr.ch</a> with
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.6.1 (ruby-1.9.3).
 </div>
